@@ -66,9 +66,10 @@ const loginUser = asyncHandler(async (req, res) => {
 
 // @desc    Get user data
 // @route   GET /api/users/me
-// @access  Public
+// @access  Private
 const getMe = asyncHandler(async (req, res) => {
-  res.json({ message: 'User data display' });
+  const { _id, name, email } = await User.findById(req.user._id);
+  res.json({ id: _id, name, email });
 });
 
 module.exports = {
