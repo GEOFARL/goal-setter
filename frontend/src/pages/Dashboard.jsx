@@ -24,7 +24,9 @@ const Dashboard = () => {
       console.log(message);
     }
 
-    dispatch(getGoals());
+    if (user) {
+      dispatch(getGoals());
+    }
 
     return () => {
       dispatch(reset());
