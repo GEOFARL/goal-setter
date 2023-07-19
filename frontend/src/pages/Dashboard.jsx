@@ -22,7 +22,7 @@ const Dashboard = () => {
     }
 
     if (isError) {
-      toast(message);
+      toast.error(message);
     }
 
     dispatch(getGoals());
