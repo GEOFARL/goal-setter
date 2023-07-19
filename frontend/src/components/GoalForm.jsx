@@ -1,15 +1,11 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createGoal } from '../app/features/goals/goalsSlice';
 
 const GoalForm = () => {
   const [text, setText] = useState('');
 
   const dispatch = useDispatch();
-
-  const { goals, isError, isSuccess, isLoading } = useSelector(
-    (state) => state.goals
-  );
 
   const onSubmit = (e) => {
     e.preventDefault();
